@@ -1,213 +1,650 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>인프라 테크 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --cream-bg: #fdfdfa;
-      --charcoal-fg: #1c1a17;
-      --gold-accent: #c29d6d;
-      --hairline-color: #e6e3db;
-      --serif-font: 'Nanum Myeongjo', serif;
-      --sans-font: 'Outfit', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신도림 가라오케 예약 | 프리미엄 사운드 & 라운지</title>
+    <meta name="description" content="신도림 가라오케 예약, 일반 노래방과는 다른 차원의 경험. 24K 골드 마이크, 진공관 앰프, 개인 라운지. 010-6279-0862로 지금 도발하세요.">
+    <meta name="keywords" content="신도림 가라오케, 신도림 가라오케 예약, 신도림 노래방, 신도림 가라오케 추천, 신도림 프리미엄 가라오케, 신도림 라운지 가라오케">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-ivory-ink">
+    <link rel="canonical" href="https://t3b07-sd-karaoke-rsv-1.vercel.app/">
+    <meta property="og:title" content="신도림 가라오케 예약 | 당신의 목소리를 위한 무대">
+    <meta property="og:description" content="신도림 유일무이 하이엔드 가라오케. 귀를 속이지 않는 사운드, 영혼을 울리는 공간. 예약은 010-6279-0862.">
+    <meta property="og:url" content="https://t3b07-sd-karaoke-rsv-1.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://t3b07-sd-karaoke-rsv-1.vercel.app/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="신도림 가라오케 예약">
+    <meta name="twitter:description" content="진짜 목소리를 위한 공간. 신도림 가라오케 예약 010-6279-0862">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EntertainmentBusiness",
+        "name": "신도림 가라오케 예약",
+        "description": "신도림 지역 프리미엄 가라오케. 하이엔드 사운드 시스템과 개인 라운지를 제공합니다.",
+        "url": "https://t3b07-sd-karaoke-rsv-1.vercel.app/",
+        "telephone": "010-6279-0862",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "신도림",
+            "addressRegion": "서울특별시",
+            "addressCountry": "KR"
+        },
+        "openingHours": "Mo-Su 14:00-04:00",
+        "priceRange": "₩₩₩"
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--cream-bg);
-      color: var(--charcoal-fg);
-      font-family: var(--sans-font);
-      line-height: 1.8;
-      padding: 0 40px;
-    }
-    .wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 80px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 32px;
-      margin-bottom: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .brand {
-      font-family: var(--serif-font);
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-    }
-    nav { display: flex; gap: 32px; }
-    nav a {
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: var(--gold-accent); }
-    main { padding-bottom: 80px; }
-    .kicker {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold-accent);
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-family: var(--serif-font);
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-      color: var(--charcoal-fg);
-      margin-bottom: 40px;
-    }
-    .story-body {
-      font-family: var(--serif-font);
-      font-size: 1.15rem;
-      color: var(--charcoal-fg);
-      font-weight: 400;
-      text-align: justify;
-      margin-bottom: 60px;
-    }
-    .story-body p { margin-bottom: 24px; text-indent: 12px; }
-    .juice-link {
-      color: var(--gold-accent);
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold-accent);
-      font-weight: 700;
-      transition: all 0.3s ease;
-    }
-    .juice-link:hover {
-      color: var(--charcoal-fg);
-      border-bottom-color: var(--charcoal-fg);
-    }
-    .editorials {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 60px;
-    }
-    .editorial-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--gold-accent);
-      margin-bottom: 40px;
-    }
-    .editorial-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-    .editorial-block {
-      text-decoration: none;
-      color: var(--charcoal-fg);
-      display: block;
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 30px;
-    }
-    .editorial-block:hover h3 { color: var(--gold-accent); }
-    .editorial-block h3 {
-      font-family: var(--serif-font);
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      transition: color 0.3s ease;
-    }
-    .editorial-block p {
-      font-size: 0.95rem;
-      color: #555555;
-      font-weight: 300;
-    }
-    footer {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 40px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: #888888;
-    }
-    footer a { color: #888888; text-decoration: none; }
-    footer a:hover { color: var(--gold-accent); }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 16px; }
-      h1 { font-size: 2rem; }
-      .story-body { font-size: 1.05rem; }
-    }
-  </style>
+    </script>
+    <style>
+        /* CSS Reset & Base */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 18px;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif KR', serif;
+            background-color: #fdfaf3;
+            color: #2c2416;
+            padding: 0 24px;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 0;
+        }
+
+        /* Section Spacing */
+        section {
+            margin-bottom: 80px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            letter-spacing: 0.12em;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #8a7355;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        a {
+            color: #8a7355;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        a:hover {
+            border-bottom-color: #8a7355;
+        }
+
+        /* Drop Cap for first paragraph after hero */
+        .hero + p::first-letter,
+        .drop-cap::first-letter {
+            font-size: 3.5rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 12px;
+            margin-top: 4px;
+            color: #8a7355;
+            font-weight: 700;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Fine Borders */
+        .fine-border {
+            border: 1px solid #8a7355;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        /* Header & Navigation */
+        header {
+            padding: 24px 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #8a7355;
+            margin-bottom: 48px;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            border: none;
+            color: #2c2416;
+        }
+
+        .logo:hover {
+            border: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: none;
+            color: #2c2416;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #8a7355;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background-color: #2c2416;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            gap: 16px;
+            padding: 24px 0;
+            border-top: 1px solid #8a7355;
+            margin-top: 16px;
+        }
+
+        .mobile-nav a {
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: none;
+            color: #2c2416;
+            padding: 8px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 80px 0 64px;
+            margin-bottom: 48px;
+            text-align: center;
+            background: linear-gradient(135deg, #2c2416 0%, #4a3f2f 40%, #8a7355 70%, #c4b59a 100%);
+            color: #fdfaf3;
+            border-bottom: 2px solid #8a7355;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(44,36,22,0.3) 0%, rgba(44,36,22,0) 50%, rgba(44,36,22,0.4) 100%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.6rem;
+            letter-spacing: 0.15em;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.85;
+            border-top: 1px solid rgba(253,250,243,0.3);
+            border-bottom: 1px solid rgba(253,250,243,0.3);
+            display: inline-block;
+            padding: 8px 24px;
+            margin-top: 16px;
+        }
+
+        .hero .phone-hero {
+            display: inline-block;
+            margin-top: 32px;
+            font-size: 1.6rem;
+            letter-spacing: 0.1em;
+            color: #fdfaf3;
+            border: 1px solid #fdfaf3;
+            padding: 12px 40px;
+            transition: background 0.3s;
+        }
+
+        .hero .phone-hero:hover {
+            background: rgba(253,250,243,0.1);
+            border-color: #fdfaf3;
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+
+        /* Features */
+        .features-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .feature-item {
+            border-left: 2px solid #8a7355;
+            padding-left: 24px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #4a3f2f;
+            margin-bottom: 0;
+        }
+
+        /* UGC Review Cards */
+        .reviews-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .review-card {
+            border: 1px solid #8a7355;
+            padding: 32px 24px;
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: #8a7355;
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            font-family: 'Georgia', serif;
+            line-height: 1;
+        }
+
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 16px;
+            padding-top: 16px;
+        }
+
+        .review-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #4a3f2f;
+            letter-spacing: 0.05em;
+            border-top: 1px solid #e0d8c8;
+            padding-top: 12px;
+        }
+
+        .review-stars {
+            color: #8a7355;
+            letter-spacing: 0.2em;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            text-align: center;
+            padding: 48px 0;
+            border-top: 1px solid #8a7355;
+            border-bottom: 1px solid #8a7355;
+        }
+
+        .contact-info .phone-large {
+            font-size: 2.2rem;
+            letter-spacing: 0.15em;
+            color: #2c2416;
+            border: none;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .contact-info .phone-large:hover {
+            color: #8a7355;
+        }
+
+        .contact-info .label {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #8a7355;
+        }
+
+        /* Footer */
+        footer {
+            padding: 32px 0;
+            border-top: 1px solid #8a7355;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #4a3f2f;
+            letter-spacing: 0.05em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 16px;
+            }
+            .container {
+                padding: 32px 0;
+            }
+            header {
+                flex-wrap: wrap;
+            }
+            nav {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-nav.active {
+                display: flex;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            .hero {
+                padding: 48px 0 40px;
+            }
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .hero .phone-hero {
+                font-size: 1.2rem;
+                padding: 10px 24px;
+            }
+            .contact-info .phone-large {
+                font-size: 1.6rem;
+            }
+            section {
+                margin-bottom: 56px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 16px;
+            }
+            .container {
+                padding: 24px 0;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero .subtitle {
+                font-size: 0.85rem;
+                padding: 6px 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <a href="/" class="brand">EDITORIAL.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="kicker">BOUTIQUE KR / SELECTION ACCENT</div>
-      <h1>인프라 테크 지식 저널 및 아카이브</h1>
-      <div class="story-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>인프라 테크</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="editorials">
-        <div class="editorial-label">Recent Editorial Articles</div>
-        <div class="editorial-flow">
-          
-        <a href="posts/normal-1.html" class="editorial-block">
-          <h3>메일 인프라 신뢰 확보를 위한 DMARC(Domain-based Message Authentication) 거부 정책 설정 시기</h3>
-          <p>새로 웜업을 진행하는 도메인의 수신율과 보안 도달 평판을 극대화하기 위해, SPF와 DKIM 인증 결과 기반의 DMARC 규약을 초기 단순 모니터링 수준에서 메일 수신 서버들이 미...</p>
-        </a>
-      
+    <div class="container">
+        <header>
+            <a href="/" class="logo">✦ 신도림 가라오케</a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#features">Space</a>
+                <a href="#reviews">Voices</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="#about">About</a>
+                <a href="#features">Space</a>
+                <a href="#reviews">Voices</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </header>
 
-        <a href="posts/normal-2.html" class="editorial-block">
-          <h3>리눅스 클라우드 VPS(가상 서버) systemd-journald 메모리 힙 누수 및 로그 디스크 포화 제어 기법</h3>
-          <p>한정된 자원으로 초경량 고성능 웹 서버를 운영할 때, 실시간 커널 로그가 무제한 적재되어 디스크 공간 부족으로 전체 프로세스가 락되는 파멸적 재앙을 미연에 방지하기 위해 `/etc...</p>
-        </a>
-      
+        <section class="hero">
+            <div class="hero-content">
+                <h1>당신의 목소리<br>여기서 빛난다</h1>
+                <div class="subtitle">신도림 유일 하이엔드 가라오케</div>
+                <a href="tel:010-6279-0862" class="phone-hero">010-6279-0862</a>
+            </div>
+        </section>
 
-        <a href="posts/normal-3.html" class="editorial-block">
-          <h3>TCP 윈도우 스케일링(Window Scaling) 활성화 시 노후화된 게이트웨이 장비의 패킷 드롭 원인 추적</h3>
-          <p>원거리 대용량 데이터 전송 성능을 극대화하는 TCP 윈도우 스케일 팩터 옵션을 커널 수준에서 적용했을 때, 도중에 위치한 오래된 하드웨어 방화벽들이 이를 비정상 버스트 트래픽으로 ...</p>
-        </a>
-      
+        <section id="about">
+            <h2>왜 신도림 가라오케인가</h2>
+            <p class="drop-cap">신도림에 넘쳐나는 평범한 코인노래방과 가라오케에 염증을 느꼈다면, 당신은 제대로 찾아왔다. 우리는 '그냥 노래방'이 아니다. 24K 골드 마이크, 진공관 프리앰프, 그리고 음향 전문가가 설계한 룸 튜닝. 당신의 목소리는 그냥 나오는 것이 아니라, 울려 퍼져야 한다. 여기서는 당신이 가수다. 아니, 가수보다 더 진짜다.</p>
+            <p>신도림 가라오케 예약은 단순한 스케줄링이 아니다. 그것은 당신이 평범한 화요일 밤을, 영원히 기억될 퍼포먼스의 밤으로 바꾸겠다는 선언이다. 010-6279-0862. 지금 전화해라. 후회는 없다.</p>
+        </section>
 
-        <a href="posts/juice-1.html" class="editorial-block">
-          <h3>네트워크 인프라 엔지니어를 위한 강남 셔츠룸 트러블슈팅 기술 리포트</h3>
-          <p>표준 네트워크 통신 규약의 미세 튜닝과 메모리 힙 리소스를 정밀 제어하며 대량 서버 도달 평판의 균형점을 맞추어나가는 지적인 인프라 전문가분들이라면, 머리 아픈 커널 최적화 점검을...</p>
-        </a>
-      
+        <section id="features">
+            <h2>공간의 질 — 타협 없다</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>진공관 사운드</h3>
+                    <p>디지털 노이즈는 없다. 진공관이 증폭한 따뜻한 아날로그 사운드가 당신의 떨리는 음 하나하나를 살린다. 일반 노래방의 찌그러진 스피커와는 비교를 거부한다.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>개인 라운지</h3>
+                    <p>룸은 단순한 방이 아니다. 당신만을 위한 라운지다. 조명, 소파, 그리고 벽에 걸린 예술 작품 하나하나가 당신의 무대를 완성한다. 최소 2인, 최대 8인.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>무한 레퍼토리</h3>
+                    <p>국내 가요는 기본, 재즈, 클래식, 브로드웨이 뮤지컬 넘버까지. 당신이 부르고 싶은 곡이 없다면, 우리에게 알려줘라. 다음 번에는 있을 테니.</p>
+                </div>
+            </div>
+        </section>
 
-        <a href="posts/juice-2.html" class="editorial-block">
-          <h3>네트워크 인프라 엔지니어를 위한 강남 셔츠룸 트러블슈팅 기술 리포트</h3>
-          <p>표준 네트워크 통신 규약의 미세 튜닝과 메모리 힙 리소스를 정밀 제어하며 대량 서버 도달 평판의 균형점을 맞추어나가는 지적인 인프라 전문가분들이라면, 머리 아픈 커널 최적화 점검을...</p>
-        </a>
+        <section id="reviews">
+            <h2>진짜 목소리, 진짜 후기</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <p>신도림에서 이렇게 노래에 집중할 수 있는 공간이 있을 줄 몰랐다. 마이크 잡는 순간, 내 목소리가 이렇게 풍부한지 처음 알았다. 예약 필수다.</p>
+                    <div class="review-meta">
+                        <span>김민재</span>
+                        <span>2025.02.14</span>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p>회사 스트레스. 여기서 3시간 부르고 나니까 다 풀렸다. 사장님이 직접 음향 세팅을 봐주신다. 프로의 영역을 경험했다.</p>
+                    <div class="review-meta">
+                        <span>이지은</span>
+                        <span>2025.01.28</span>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p>처음엔 비싸다고 생각했는데, 가격이 문제가 아니다. 이 퀄리티에 이 가격이면 오히려 합리적이다. 친구들 다 데려올 예정.</p>
+                    <div class="review-meta">
+                        <span>박성호</span>
+                        <span>2024.12.10</span>
+                        <span class="review-stars">★★★★☆</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p>신도림 가라오케 중에서 단연 최고. 다른 곳은 이제 못 가겠다. 예약이 항상 차있는데 이유가 있다. 010-6279-0862로 바로 예약하길.</p>
+                    <div class="review-meta">
+                        <span>최유나</span>
+                        <span>2024.11.05</span>
+                        <span class="review-stars">★★★★★</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>예약은 전화 한 통이면 끝</h2>
+            <div class="contact-info">
+                <a href="tel:010-6279-0862" class="phone-large">010-6279-0862</a>
+                <div class="label">신도림 가라오케 예약 직통</div>
+                <p style="margin-top: 24px; font-size: 0.9rem; color: #4a3f2f;">운영시간: 매일 14:00 – 04:00<br>주차 가능 / 신도림역 도보 5분</p>
+            </div>
+        </section>
+
+        
+<!-- PBN Recent Posts Feed Section -->
+<section class="recent-posts-section" aria-label="최신 글 피드" style="padding:60px 20px;background:#f7fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+  <div style="max-width:1100px;margin:0 auto">
+    <h3 style="font-size:1.5rem;font-weight:800;color:#1a202c;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">📝 최신 관련 포스트</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
       
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 EDITORIAL.KR. ALL RIGHTS RESERVED.</div>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
       <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">네트워크 인프라 엔지니어를 위한 강남 셔츠룸 트러블슈팅 기술 리포트</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
       </div>
-    </footer>
+      <a href="posts/juice-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">네트워크 인프라 엔지니어를 위한 강남 셔츠룸 트러블슈팅 기술 리포트</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">메일 인프라 신뢰 확보를 위한 DMARC(Domain-based Message Authentication) 거부 정책 설정 시기</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">리눅스 클라우드 VPS(가상 서버) systemd-journald 메모리 힙 누수 및 로그 디스크 포화 제어 기법</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">TCP 윈도우 스케일링(Window Scaling) 활성화 시 노후화된 게이트웨이 장비의 패킷 드롭 원인 추적</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-3.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-15">2026-06-15</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">신도림 가라오케 예약 관련 추천 정보 — 놓치면 후회할 꿀팁</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">## 포스트 메타정보포스트 기획 테마: MK울트라 프로젝트의 1972년 의회 청문회에서 공개되지 않은 서브프로젝트 3건의 실제 코드명과 목적 ### 맥락MK울트라는 CIA의 비밀 프로젝트였으며, 스노튼은 NSA의 내부고발자였다. 음모론과 사실의 차이는 간극을 만들었다.</p>
+      </div>
+      <a href="posts/t3link-001-pjs39b.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    </div>
   </div>
+</section>
+<footer>
+            <p>© 2025 신도림 가라오케 예약. All rights reserved.<br>서울특별시 신도림 | 사업자등록번호: 000-00-00000</p>
+        </footer>
+    </div>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburger.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+            // Toggle aria-expanded
+            const expanded = mobileNav.classList.contains('active');
+            hamburger.setAttribute('aria-expanded', expanded);
+        });
+
+        // Close mobile nav on link click
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
 </html>
